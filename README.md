@@ -10,7 +10,7 @@ $ caddy
 
 Outline:
 
-- What are Go Modules & Really breif history
+- What are Go Modules & Really brief history
 - What changed in Go 1.13
   - Public proxy
   - Sum DB
