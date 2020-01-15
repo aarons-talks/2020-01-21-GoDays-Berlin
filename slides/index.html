@@ -35,16 +35,22 @@
 
 			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
-				<section data-markdown>
-					<script type="text/template">
-						**How to Safely and Efficiently Build your App with Modules**
-						
-						_GoDays, January 22, 2020_
-					</script>
+				<section>
+					<h1>
+						Modules & You
+					</h1>
+					
+					<p>GoDays, January 22, 2020</p>
+					<p>
+						<a href="https://twitter.com/arschles">@arschles</a>
+					</p>
+					<aside class="notes">
+						https://www.godays.io/conferenceday1
+					</aside>
 				</section>
 
 				<section>
-					<h2>10 years of Go dependencies</h2>
+					<h2>How did we get here?</h2>
 					
 					<p class="fragment"><code>nil</code></p>
 					<p class="fragment"><code>go get</code></p>
@@ -54,30 +60,112 @@
 				</section>
 
 				<section>
-					<h2>What we've gained</h2>
+					<h2><code>go get</code> is brand new</h2>
 				</section>
 
 				<section>
-					<h2>Fewer tools</h2>
+					<h3>Aaron Schlesinger</h3>
+					<p>
+						<small>
+							Sr. Cloud Developer Advocate, Microsoft
+						</small>
+					</p>
+					<p>
+						<small>
+							Core maintainer & Creator, 
+							<a href="https://docs.gomods.io">Athens</a>
+						</small>
+					</p>
+					<p>
+						<small>
+							<a href="https://twitter.com/arschles">@arschles</a>
+						</small>
+					</p>
+					<aside class="notes">
+						We're going talk today about what modules are
+						doing for you "under the hood" and how/when to
+						use it
+					</aside>
+				</section>
+
+				<section>
+					<h2>"UX" stays (mostly) the same</h2>
+					<p class="fragment">That was part of the goal</p>
+					<p class="fragment">
+						Biggest change: everything uses <code>go</code>
+					</p>
 				</section>
 				
 				<section>
-					<h2>A simple UX</h2>
-					<h2>Out of the box</h2>
+					<h2>Behind the scenes</h2>
+					<p class="fragment">
+						<code>proxy.golang.org</code>
+					</p>
+					<p class="fragment">
+						<small>
+							(No more VCS downloads)
+						</small>
+					</p>
+					<p class="fragment">
+						<code>
+							sum.golang.org
+						</code>
+					</p>
+
+					<aside class="notes">
+						All code comes from HTTP servers by default, so
+						we have a brand new abstraction for the VCS
+						origin. That gives us more reliable & faster
+						builds.
+
+						Also, all code is authenticated with a globally
+						hosted checksum database.
+					</aside>
 				</section>
 
 				<section>
-					<h2>Reliable, fast builds</h2>
+					<h2>Your workflow won't change</h2>
+					<h4 class="fragment">(mostly)</h4>
+					<h3 class="fragment">But your builds will</h3>
+					<aside class="notes">
+						Specifically, a new abstraction brings new
+						requirements.
+					</aside>
 				</section>
 
 				<section>
-					<h2>More security</h2>
+					<h2>A basic build</h2>
+					<h4 class="fragment">Your project with public dependencies</h4>
+
+					<aside class="notes">
+						Demo
+					</aside>
 				</section>
 
 				<section>
-					
+					<h2>
+						A shared <code>vendor</code> folder?
+					</h2>
 				</section>
 
+				<section>
+					<h2>Your private code</h2>
+					<p class="fragment">
+						Don't send <code>proxy.golang.org</code> 
+						private module names
+					</p>
+				</section>
+
+				<section>
+					<h2>Your private server</h2>
+					<p class="fragment">
+						Own your own shared <code>vendor</code>
+					</p>
+				</section>
+
+				<section>
+					<h2>There's more</h2>
+				</section>
 
 			</div>
 		</div>
