@@ -137,8 +137,8 @@
 				</section>
 
 				<section>
-					<h2>A basic build</h2>
-					<h4 class="fragment">
+					<h2>A basic build <small>(demo)</small></h2>
+					<h4>
 						Your project with public dependencies
 					</h4>
 
@@ -192,8 +192,8 @@
 				</section>
 
 				<section>
-					<h2>Your private code</h2>
-					<p class="fragment">
+					<h2>Your private code <small>(demo)</small></h2>
+					<p>
 						Don't send <code>proxy.golang.org</code> 
 						private module names
 					</p>
@@ -220,8 +220,8 @@
 				</section>
 
 				<section>
-					<h2>Using a private server</h2>
-					<p class="fragment">
+					<h2>Using a private server <small>(demo)</small></h2>
+					<p>
 						Own your shared <code>vendor</code>
 					</p>
 					<aside class="notes">
@@ -258,31 +258,49 @@
 						<small>(under the hood)</small>
 					</h2>
 					<aside class="notes">
-						Easily configurable
-
-						Dangerous for private dependencies, by default
+						<p>
+							Easily configurable
+						</p>
+						<p>
+							Dangerous for private dependencies, by default
+						</p>
 					</aside>
 				</section>
 				<section>
-					<h2>Private code</h2>
+					<h2>Pay attention to private code</h2>
 					<aside class="notes">
-						If you have more than a few developers,
-						set up your own server (Athens, Artifactory)
-
-						Make sure you turn on the private sum DB 
-						proxy
-
-						Make sure everyone has their
-						<code>GOPROXY</code> pointed to it
+						<p>
+							If you have more than a few developers,
+							set up your own server (Athens, Artifactory)
+						</p>
+						<p>
+							Make sure you turn on the private sum DB 
+							proxy
+						</p>
+						<p>
+							Make sure everyone has their
+							<code>GOPROXY</code> pointed to it
+						</p>
 					</aside>
 				</section>
 				<section>
-					<h3>
+					<h2>
+						More Reading
+					</h2>
+					<p class="fragment">
+						<code>GONOPROXY</code>,
+						<code>GONOSUMDB</code>
+						<code>GOPRIVATE</code>
+					</p>
+					<p class="fragment">
+						<code>go help module-private</code>
+					</p>
+					<p class="fragment">
 						<a
 							href="https://github.com/golang/go/wiki/Modules">
 							github.com/golang/go/wiki/Modules
 						</a>
-					</h3>
+					</p>
 				</section>
 				<section>
 					<p>
