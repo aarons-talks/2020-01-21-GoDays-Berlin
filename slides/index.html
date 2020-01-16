@@ -111,6 +111,9 @@
 							sum.golang.org
 						</code>
 					</p>
+					<p class="fragment">
+						<strong>Binaries still statically linked</strong>
+					</p>
 
 					<aside class="notes">
 						All code comes from HTTP servers by default, so
@@ -135,7 +138,9 @@
 
 				<section>
 					<h2>A basic build</h2>
-					<h4 class="fragment">Your project with public dependencies</h4>
+					<h4 class="fragment">
+						Your project with public dependencies
+					</h4>
 
 					<aside class="notes">
 						Demo - see <code>basic-public/</code>
@@ -163,16 +168,26 @@
 						A shared <code>vendor</code> folder?
 					</h2>
 					<aside class="notes">
-						We centralized the vendor directory to 
-						the cloud.
+						<p>
+							We centralized the vendor directory to a
+							server in the cloud.
+						</p>
 
-						In that demo, it's hosted by Google, but
-						there are other hosts.
+						<p>
+							In that demo, it's hosted by Google, but
+							there are other hosts.
+						</p>
 
-						Centralization is nice for our dependencies
-						because we can control, audit, and secure
-						without asking developers to do any more
-						work.
+						<p>
+							Centralization is nice for our dependencies
+							because we can:
+							<ul>
+								<li>Control</li>
+								<li>Audit</li>
+								<li>Secure</li>
+							</ul>
+							Our dependencies in one place.
+						</p>
 					</aside>
 				</section>
 
@@ -183,18 +198,24 @@
 						private module names
 					</p>
 					<aside class="notes">
-						Centralization comes with a gotcha.
+						<p>
+							Public hosted servers don't hold
+							your private code.
+						</p>
 
-						Public hosted servers don't hold
-						your private code.
+						<p>
+							... but it's easy (unfortunately) to ask
+							the hosted servers for your private code
+						</p>
 
-						... but it's easy (unfortunately) to ask
-						the hosted servers for your private code
+						<p>
+							... which tells them about the names of
+							your private modules
+						</p>
 
-						... which tells them about the names of
-						your private modules
-
-						You have to remember to turn that off
+						<p>
+							You have to remember to turn that off
+						</p>
 					</aside>
 				</section>
 
@@ -204,18 +225,26 @@
 						Own your shared <code>vendor</code>
 					</p>
 					<aside class="notes">
-						The best solution is to put a proxy
-						between you and the public cloud.
+						<p>
+							The best solution is to put a proxy
+							between you and the public cloud.
+						</p>
 
-						You get the same benefits and also
-						control what gets fetched from upstream.
+						<p>
+							You get the same benefits and also
+							control what gets fetched from upstream.
+						</p>
 
-						We're going to use Athens for our 
-						private server. This is the only 100%
-						open source proxy implementation.
+						<p>
+							We're going to use Athens for our 
+							private server because it's the only 100%
+							open source proxy implementation.
+						</p>
 						
-						You can run it yourself, and we have a
-						great community if you run into issues.
+						<p>
+							You can run it yourself, and we have a
+							great community if you run into issues.
+						</p>
 					</aside>
 				</section>
 
@@ -251,11 +280,24 @@
 					<h3>
 						<a
 							href="https://github.com/golang/go/wiki/Modules">
-							https://github.com/golang/go/wiki/Modules
+							github.com/golang/go/wiki/Modules
 						</a>
 					</h3>
 				</section>
 				<section>
+					<p>
+						<a href="https://docs.gomods.io">
+							docs.gomods.io
+						</a>
+					</p>
+					<p>
+						<a href="https://github.com/gomods/athens">
+							github.com/gomods/athens
+						</a>
+					</p>
+					<p>
+						<code>#athens</code>
+					</p>
 					<p><code>@arschles</code></p>
 				</section>
 			</div>
