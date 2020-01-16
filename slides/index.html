@@ -138,7 +138,23 @@
 					<h4 class="fragment">Your project with public dependencies</h4>
 
 					<aside class="notes">
-						Demo
+						Demo - see <code>basic-public/</code>
+
+						<ul>
+							<li>
+								Introduce <code>go.mod</code>
+								and <code>go.sum</code>
+							</li>
+							<li>
+								Clear cache
+							</li>
+							<li>
+								Show <code>GOPROXY</code>
+							</li>
+							<li>
+								Build the app
+							</li>
+						</ul>
 					</aside>
 				</section>
 
@@ -146,6 +162,18 @@
 					<h2>
 						A shared <code>vendor</code> folder?
 					</h2>
+					<aside class="notes">
+						We centralized the vendor directory to 
+						the cloud.
+
+						In that demo, it's hosted by Google, but
+						there are other hosts.
+
+						Centralization is nice for our dependencies
+						because we can control, audit, and secure
+						without asking developers to do any more
+						work.
+					</aside>
 				</section>
 
 				<section>
@@ -154,19 +182,82 @@
 						Don't send <code>proxy.golang.org</code> 
 						private module names
 					</p>
+					<aside class="notes">
+						Centralization comes with a gotcha.
+
+						Public hosted servers don't hold
+						your private code.
+
+						... but it's easy (unfortunately) to ask
+						the hosted servers for your private code
+
+						... which tells them about the names of
+						your private modules
+
+						You have to remember to turn that off
+					</aside>
 				</section>
 
 				<section>
-					<h2>Your private server</h2>
+					<h2>Using a private server</h2>
 					<p class="fragment">
-						Own your own shared <code>vendor</code>
+						Own your shared <code>vendor</code>
 					</p>
+					<aside class="notes">
+						The best solution is to put a proxy
+						between you and the public cloud.
+
+						You get the same benefits and also
+						control what gets fetched from upstream.
+
+						We're going to use Athens for our 
+						private server. This is the only 100%
+						open source proxy implementation.
+						
+						You can run it yourself, and we have a
+						great community if you run into issues.
+					</aside>
 				</section>
 
 				<section>
-					<h2>There's more</h2>
+					<h2>Things to remember</h2>
 				</section>
 
+				<section>
+					<h2>
+						A fundamental change
+						<small>(under the hood)</small>
+					</h2>
+					<aside class="notes">
+						Easily configurable
+
+						Dangerous for private dependencies, by default
+					</aside>
+				</section>
+				<section>
+					<h2>Private code</h2>
+					<aside class="notes">
+						If you have more than a few developers,
+						set up your own server (Athens, Artifactory)
+
+						Make sure you turn on the private sum DB 
+						proxy
+
+						Make sure everyone has their
+						<code>GOPROXY</code> pointed to it
+					</aside>
+				</section>
+				<section>
+					<h3>
+						<a
+							href="https://github.com/golang/go/wiki/Modules">
+							https://github.com/golang/go/wiki/Modules
+						</a>
+					</h3>
+				</section>
+				<section>
+					<p><code>@arschles</code></p>
+				</section>
 			</div>
 		</div>
 
