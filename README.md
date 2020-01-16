@@ -8,6 +8,8 @@ $ cd slides
 $ caddy
 ```
 
+Pretty `f` to enter full screen.
+
 Outline:
 
 - What are Go Modules & Really brief history

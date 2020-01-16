@@ -1,0 +1,30 @@
+<html>
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container-fluid mt-3">
+        <div class="row">
+            <div class="col-sm-4 offset-sm-4 text-center btn-group btn-group-lg" role="group" aria-label="Animals!">
+                <a
+                    type="button"
+                    class="btn btn-lg btn-outline-primary"
+                    href="/">
+                    Home
+                </a>
+                <a
+                    type="button"
+                    class="btn btn-lg btn-outline-primary"
+                    href="<%= curURL %>">
+                    Next
+                </a>
+            </div>
+        </div>
+        <div class="row mt-2">
+            <div class="col-sm text-center">
+                <img src="<%= imgSrc %>" style="max-height:500px;"/>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
