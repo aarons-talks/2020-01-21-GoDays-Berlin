@@ -13,6 +13,7 @@ You'll need to set up Athens to be able to fetch code from the private repositor
 ```console
 $ docker run \
     -p 3000:3000 \
+    -e ATHENS_GO_GET_WORKERS=5 \
     -e ATHENS_GONOSUM_PATTERNS="github.com/arschles/godays2020private" \
     -e ATHENS_GITHUB_TOKEN="$ATHENS_GITHUB_TOKEN" \
     gomods/athens:v0.7.1
@@ -37,9 +38,35 @@ $ go env -w GONOSUMDB=github.com/arschles/godays2020private
 
 ## Compile and run
 
-Now that you're all set up, clear your cache and run the server in the same terminal window as the last step (just as you did in the [previous demo](../basic-private)):
+Now that you're all set up, make sure `GOPRIVATE` is not set, clear your cache and run the server in the same terminal window as the last step (just as you did in the [previous demo](../basic-private)):
 
 ```console
+$ go env -w GOPRIVATE=none
 $ sudo rm -rf $(go env GOPATH)/pkg/mod
 $ go run .
 ```
+
+## Bonus: Running Athens While Offline
+
+In this demo, Athens has used the default module database, which is stored on disk. You can pre-fill the Athens module database, which means that you can actually have a functioning development environment while not having access to the internet whatsoever.
+
+This directory has a complete archive of the modules needed to build the app, including the private code. This archive is in [`./athens-private`](./athens-private).
+
+In order to use it, run this command:
+
+```console
+$ export ATHENS_ARCHIVE="$PWD/athens_archive"
+$ docker run \
+    -p 3000:3000 \
+    -e ATHENS_GO_GET_WORKERS=5 \
+    -e ATHENS_STORAGE_TYPE=disk \
+    -e ATHENS_DISK_STORAGE_ROOT=/athens \
+    -v $ATHENS_ARCHIVE:/athens \
+    -e ATHENS_GONOSUM_PATTERNS="github.com/arschles/godays2020private" \
+     -e ATHENS_GITHUB_TOKEN="$ATHENS_GITHUB_TOKEN" \
+    gomods/athens:v0.7.1
+```
+
+### If you want to create your own archive
+
+You can create the disk archive for Athens dependencies by running the same command as above, and then running `go build`. Change the `ATHENS_ARCHIVE` as necessary to store the archive in the location of your choice.
