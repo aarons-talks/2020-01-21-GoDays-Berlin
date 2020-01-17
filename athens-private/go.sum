@@ -1,5 +1,7 @@
 github.com/arschles/godays2020private v0.0.0-20200116230002-3181a738fdb6 h1:F0moso2MVlfglPSkmfSCBbmgcCg1gqKtW4FoJuRnIkY=
 github.com/arschles/godays2020private v0.0.0-20200116230002-3181a738fdb6/go.mod h1:S3IseoLEjIgInUvbURztXKpWBDA4zjfuuMaJZSZec24=
+github.com/arschles/godays2020private v0.0.1 h1:Skla8tDHRBabAuscPI6Ns1p150vFfGm3LXbzfJggDGw=
+github.com/arschles/godays2020private v0.0.1/go.mod h1:ePiZgJ/8uYf3fB5pUmLcnR+2I+YpeMLkRdLvlJD3gLQ=
 github.com/davecgh/go-spew v1.1.0/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
 github.com/davecgh/go-spew v1.1.1/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
 github.com/fatih/structs v1.1.0 h1:Q7juDM0QtcnhCpeyLGQKyg4TOIghuNXrkL32pHAUMxo=

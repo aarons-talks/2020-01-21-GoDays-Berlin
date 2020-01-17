@@ -3,7 +3,7 @@ module github.com/aarons-talks/2019-10-21-GoLab
 go 1.13
 
 require (
-	github.com/arschles/godays2020private v0.0.0-20200116230002-3181a738fdb6
+	github.com/arschles/godays2020private v0.0.1
 	github.com/gin-gonic/gin v1.5.0
 	github.com/gobuffalo/envy v1.7.0 // indirect
 	github.com/gobuffalo/plush v3.8.3+incompatible
