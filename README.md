@@ -8,7 +8,7 @@ $ cd slides
 $ caddy
 ```
 
-Pretty `f` to enter full screen.
+Press `f` to enter full screen.
 
 Outline:
 
