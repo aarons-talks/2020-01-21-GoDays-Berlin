@@ -62,10 +62,10 @@ $ docker run \
     -e ATHENS_STORAGE_TYPE=disk \
     -e ATHENS_DISK_STORAGE_ROOT=/athens \
     -v $ATHENS_ARCHIVE:/athens \
-    -e ATHENS_GONOSUM_PATTERNS="github.com/arschles/godays2020private" \
-     -e ATHENS_GITHUB_TOKEN="$ATHENS_GITHUB_TOKEN" \
     gomods/athens:v0.7.1
 ```
+
+>Notice how we don't need `ATHENS_GITHUB_TOKEN` and `ATHENS_GONOSUM_PATTERNS`. This is because neither Athens nor the client `go` CLI will ever need to fetch _new_ code - and so it won't need to use a GitHub token or verify new checksums. All code and metadata originates from the Athens archive.
 
 ### If you want to create your own archive
 
