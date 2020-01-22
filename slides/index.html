@@ -105,7 +105,7 @@
 					</h3>
 					<p class="fragment">
 						<small>
-							(No more VCS downloads)
+							(No VCS downloads. Custom HTTP API)
 						</small>
 					</p>
 					<h3 class="fragment">
@@ -127,8 +127,13 @@
 							builds.
 						</p>
 						<p>
-							Also, all code is authenticated with a globally
-							hosted checksum database.
+							Also, all code is authenticated with a
+							globally hosted (by the Go team) checksum
+							database. That means that when you run
+							<code>go get</code> on a new module version,
+							you'll be sure that the code at that
+							version hasn't been changed since it was first
+							seen in the community.
 						</p>
 					</aside>
 				</section>
