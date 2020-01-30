@@ -37,12 +37,19 @@
 			<div class="slides">
 				<section>
 					<h1>
-						Modules & You
+						Modules & Your App
 					</h1>
 					
 					<p>GoDays, January 22, 2020</p>
 					<p>
-						<a href="https://twitter.com/arschles">@arschles</a>
+						<a href="https://twitter.com/arschles">
+							@arschles
+						</a>
+					</p>
+					<p>
+						<a href="https://bit.ly/godaysmodules2020">
+							bit.ly/godaysmodules2020
+						</a>
 					</p>
 					<aside class="notes">
 						https://www.godays.io/conferenceday1
@@ -64,22 +71,16 @@
 				</section>
 
 				<section>
-					<h3>Aaron Schlesinger</h3>
+					<h1>Aaron Schlesinger</h1>
 					<p>
-						<small>
-							Sr. Cloud Developer Advocate, Microsoft
-						</small>
+						Core maintainer & Creator, 
+						<a href="https://docs.gomods.io">Athens</a>
 					</p>
 					<p>
-						<small>
-							Core maintainer & Creator, 
-							<a href="https://docs.gomods.io">Athens</a>
-						</small>
+						Sr. Cloud Developer Advocate, Microsoft
 					</p>
 					<p>
-						<small>
-							<a href="https://twitter.com/arschles">@arschles</a>
-						</small>
+						<a href="https://twitter.com/arschles">@arschles</a>
 					</p>
 					<aside class="notes">
 						We're going talk today about what modules are
@@ -89,30 +90,33 @@
 				</section>
 
 				<section>
-					<h2>"UX" stays (mostly) the same</h2>
-					<p class="fragment">That was part of the goal</p>
+					<h2>
+						Everything uses <code>go</code>
+					</h2>
 					<p class="fragment">
-						Biggest change: everything uses <code>go</code>
+						With a deceivingly familiar workflow.
 					</p>
 				</section>
 				
 				<section>
 					<h2>Behind the scenes</h2>
-					<p class="fragment">
+					<h3 class="fragment">
 						<code>proxy.golang.org</code>
-					</p>
+					</h3>
 					<p class="fragment">
 						<small>
-							(No more VCS downloads)
+							(No VCS downloads. Custom HTTP API)
 						</small>
 					</p>
-					<p class="fragment">
+					<h3 class="fragment">
 						<code>
 							sum.golang.org
 						</code>
-					</p>
+					</h3>
 					<p class="fragment">
-						<strong>Binaries still statically linked</strong>
+						<small>
+							(Global checksum database)
+						</small>
 					</p>
 
 					<aside class="notes">
@@ -123,16 +127,31 @@
 							builds.
 						</p>
 						<p>
-							Also, all code is authenticated with a globally
-							hosted checksum database.
+							Also, all code is authenticated with a
+							globally hosted (by the Go team) checksum
+							database. That means that when you run
+							<code>go get</code> on a new module version,
+							you'll be sure that the code at that
+							version hasn't been changed since it was first
+							seen in the community.
 						</p>
 					</aside>
 				</section>
 
 				<section>
-					<h2>Your workflow won't change</h2>
-					<h4 class="fragment">(mostly)</h4>
-					<h3 class="fragment">But your builds will</h3>
+					<h2>Layers to preparedness</h2>
+					<p class="fragment">
+						Tracking & securing dependencies
+					</p>
+					<p class="fragment">
+						Where code comes from
+					</p>
+					<p class="fragment">
+						Where it's stored
+					</p>
+					<p class="fragment">
+						Handling private code
+					</p>
 					<aside class="notes">
 						Specifically, a new abstraction brings new
 						requirements.
@@ -197,8 +216,12 @@
 				<section>
 					<h2>Your private code <small>(demo)</small></h2>
 					<p>
-						Don't send <code>proxy.golang.org</code> 
-						private module names
+						<code>proxy.golang.org</code>
+						and 
+						<code>sum.golang.org</code>
+					</p>
+					<p>
+						should not see private module names
 					</p>
 					<aside class="notes">
 						<p>
@@ -252,7 +275,7 @@
 				</section>
 
 				<section>
-					<h2>Things to remember</h2>
+					<h1>Things to remember</h1>
 				</section>
 
 				<section>
@@ -270,7 +293,16 @@
 					</aside>
 				</section>
 				<section>
-					<h2>Pay attention to private code</h2>
+					<h2>Increased security</h2>
+					<p class="fragment">
+						With higher complexity
+					</p>
+				</section>
+				<section>
+					<h2>Private code</h2>
+					<p class="fragment">
+						You must overwrite defaults
+					</p>
 					<aside class="notes">
 						<p>
 							If you have more than a few developers,
@@ -291,9 +323,9 @@
 						More Reading
 					</h2>
 					<p class="fragment">
-						<code>GONOPROXY</code>,
-						<code>GONOSUMDB</code>
-						<code>GOPRIVATE</code>
+						GONOPROXY,
+						GONOSUMDB,
+						GOPRIVATE
 					</p>
 					<p class="fragment">
 						<code>go help module-private</code>
@@ -307,17 +339,14 @@
 				</section>
 				<section>
 					<p>
+						<a href="https://bit.ly/godaysmodules2020">
+							bit.ly/godaysmodules2020
+						</a>
+					</p>
+					<p>
 						<a href="https://docs.gomods.io">
 							docs.gomods.io
 						</a>
-					</p>
-					<p>
-						<a href="https://github.com/gomods/athens">
-							github.com/gomods/athens
-						</a>
-					</p>
-					<p>
-						<code>#athens</code>
 					</p>
 					<p><code>@arschles</code></p>
 				</section>

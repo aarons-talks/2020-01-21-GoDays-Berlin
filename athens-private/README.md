@@ -12,6 +12,7 @@ You'll need to set up Athens to be able to fetch code from the private repositor
 
 ```console
 $ docker run \
+    --rm \
     -p 3000:3000 \
     -e ATHENS_GO_GET_WORKERS=5 \
     -e ATHENS_GONOSUM_PATTERNS="github.com/arschles/godays2020private" \
@@ -57,6 +58,7 @@ In order to use it, run this command:
 ```console
 $ export ATHENS_ARCHIVE="$PWD/athens_archive"
 $ docker run \
+    --rm \
     -p 3000:3000 \
     -e ATHENS_GO_GET_WORKERS=5 \
     -e ATHENS_STORAGE_TYPE=disk \
